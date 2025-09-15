@@ -1,0 +1,33 @@
+{
+  "name": "leetcode-pattern-hints-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension that provides instant LeetCode pattern hints on keyword hover",
+  "main": "content.js",
+  "scripts": {
+    "build": "echo 'No build process needed for Chrome extension'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting specified'",
+    "package": "zip -r leetcode-hints-extension.zip . -x '*.git*' 'node_modules/*' '*.md' 'package*.json'"
+  },
+  "keywords": [
+    "leetcode",
+    "chrome-extension",
+    "algorithm",
+    "patterns",
+    "hints",
+    "coding",
+    "interview-prep"
+  ],
+  "author": "Exponent Labs LLC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exponentlabshq/leetcode-prep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/exponentlabshq/leetcode-prep/issues"
+  },
+  "homepage": "https://github.com/exponentlabshq/leetcode-prep#readme",
+  "devDependencies": {},
+  "dependencies": {}
+}
