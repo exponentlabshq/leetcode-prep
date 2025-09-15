@@ -6,7 +6,7 @@ by Exponent Labs LLC inspired by algo.monster
 
 **Struggling with LeetCode? You're not alone.** Most developers waste countless hours randomly solving problems without a systematic approach, leading to burnout, inconsistent results, and the frustrating feeling of "I solved this before, but I can't remember how." This repository solves that problem by providing a **laser-focused, energy-conserving strategy** that transforms LeetCode preparation from chaotic trial-and-error into a predictable, structured learning system.
 
-**The core innovation is our "Keyword → Algorithm" mapping system** that eliminates the guesswork from problem-solving. Instead of staring blankly at problems wondering where to start, you'll learn to instantly recognize patterns through highlighted keywords, map them to proven algorithms, and apply battle-tested templates. This approach reduces mental fatigue by 70% because your brain follows a clear decision tree rather than exhausting itself with endless possibilities. Whether you're preparing for FAANG interviews, leveling up your coding skills, or building confidence in technical discussions, this system gives you the **reliable, repeatable process** that top engineers use to solve problems efficiently.
+**The core innovation is the "Keyword → Algorithm" mapping system** inspired by algo.monster that eliminates the guesswork from problem-solving. Instead of staring blankly at problems wondering where to start, you'll learn to instantly recognize patterns through highlighted keywords, map them to proven algorithms, and apply battle-tested templates. This approach reduces mental fatigue by 70% because your brain follows a clear decision tree rather than exhausting itself with endless possibilities. Whether you're preparing for FAANG interviews, leveling up your coding skills, or building confidence in technical discussions, this system gives you the **reliable, repeatable process** that top engineers use to solve problems efficiently.
 
 **Built for resilience and long-term success**, this repository includes comprehensive decision trees, visual pattern recognition aids, implementation templates, and problem-specific cheatsheets that grow with your skill level. The structured approach means you can practice for 30 minutes or 3 hours and always make meaningful progress. No more energy-draining sessions of "I don't know where to start" or "I solved this but can't explain it." This system teaches you to **think like a senior engineer** - systematically, efficiently, and with confidence that comes from having a proven framework for any problem you encounter.
 
@@ -60,10 +60,8 @@ by Exponent Labs LLC inspired by algo.monster
 | **"how many ways"** | 🟠 Orange | **Dynamic Programming** | `dp[i] = dp[i-1] + dp[i-2]` | State transitions |
 | **"frequency count"** | ⚫ Black | **Hash Map** | `count_map[char] = count_map.get(char, 0) + 1` | Frequency tracking |
 | **"generate all"** | 🟤 Brown | **Backtracking** | `def backtrack(path, choices):` | Generation problems |
-| **"find target"** | ⚫ Black | **Binary Search** | `while left <= right: mid = (left + right) // 2` | Search in sorted data |
-| **"valid parentheses"** | 🟡 Yellow | **Stack** | `if char in '([{': stack.append(char)` | Parentheses matching |
-| **"hash set"** | 🔵 Blue | **Hash Set** | `char_set = set()` | Duplicate detection |
-| **"hash map"** | 🟣 Purple | **Hash Map** | `count_map = {}` | Frequency tracking |
+| **"find target"** | 🔵 Blue | **Binary Search** | `while left <= right: mid = (left + right) // 2` | Search in sorted data |
+| **"valid parentheses"** | 🟢 Green | **Stack** | `if char in '([{': stack.append(char)` | Parentheses matching |
 
 ### **🧠 Mental Model from Keywords**
 
@@ -78,8 +76,6 @@ by Exponent Labs LLC inspired by algo.monster
 "generate all" → Think: "Backtracking with choices"
 "find target" → Think: "Binary search in sorted data"
 "valid parentheses" → Think: "Stack for matching"
-"hash set" → Think: "Set for duplicate detection"
-"hash map" → Think: "Map for frequency tracking"
 ```
 
 ---
@@ -120,12 +116,10 @@ What is the PRIMARY operation?
 | **BFS/DFS** | `"tree"`, `"graph"`, `"level order"`, `"path"` | BFS/DFS | O(V + E) | O(h) | `queue = [root]` or `def dfs(node)` |
 | **Heap** | `"top k"`, `"kth largest"`, `"priority"` | Heap/Priority Queue | O(n log k) | O(k) | `heapq.heappush/pop` |
 | **DP** | `"how many ways"`, `"maximum"`, `"minimum"` | Dynamic Programming | O(n) to O(n²) | O(n) to O(n²) | `dp[i] = max/min(dp[i-1], ...)` |
-| **Hash Map** | `"frequency"`, `"count"`, `"occurrence"`, `"track"` | Hash Map/Set | O(n) | O(k) | `count_map[item] = count_map.get(item, 0) + 1` |
+| **Hash Map/Set** | `"frequency"`, `"count"`, `"occurrence"`, `"track"`, `"duplicate"`, `"unique"` | Hash Map/Set | O(1) | O(k) | `count_map = {}` or `char_set = set()` |
 | **Backtracking** | `"generate all"`, `"permutations"`, `"combinations"`, `"subsets"` | Backtracking | O(2^n) | O(n) | `def backtrack(path, choices):` |
 | **Binary Search** | `"find target"`, `"rotated"`, `"peak element"` | Binary Search | O(log n) | O(1) | `while left <= right: mid = (left + right) // 2` |
 | **Stack** | `"valid parentheses"`, `"matching"`, `"brackets"` | Stack | O(n) | O(n) | `if char in '([{': stack.append(char)` |
-| **Hash Set** | `"duplicate"`, `"unique"`, `"contains"` | Hash Set | O(1) | O(k) | `char_set = set()` |
-| **Hash Map** | `"frequency"`, `"count"`, `"occurrence"` | Hash Map | O(1) | O(k) | `count_map = {}` |
 
 ### **🔍 Keyword → Implementation Quick Lookup**
 
@@ -138,11 +132,10 @@ What is the PRIMARY operation?
 | `"top k elements"` | **Heap** | `heapq.nlargest(k, nums)` | Top K Frequent Elements |
 | `"how many ways"` | **DP** | `dp[i] = dp[i-1] + dp[i-2]` | Climbing Stairs |
 | `"frequency count"` | **Hash Map** | `count_map[char] = count_map.get(char, 0) + 1` | First Unique Character |
+| `"duplicate"` | **Hash Set** | `char_set = set()` | Contains Duplicate |
 | `"generate all"` | **Backtracking** | `def backtrack(path, choices):` | Generate Parentheses |
 | `"find target"` | **Binary Search** | `while left <= right: mid = (left + right) // 2` | Search in Rotated Array |
 | `"valid parentheses"` | **Stack** | `if char in '([{': stack.append(char)` | Valid Parentheses |
-| `"hash set"` | **Hash Set** | `char_set = set()` | Contains Duplicate |
-| `"hash map"` | **Hash Map** | `count_map = {}` | Two Sum |
 
 ---
 
@@ -187,11 +180,10 @@ What is the PRIMARY operation?
 | 🔴 **"top k"** | **Heap** | Use priority queue |
 | 🔴 **"how many ways"** | **DP** | Use dynamic programming |
 | 🔴 **"frequency count"** | **Hash Map** | Use hash map for tracking |
+| 🔴 **"duplicate"** | **Hash Set** | Use set for duplicate detection |
 | 🔴 **"generate all"** | **Backtracking** | Use backtracking with choices |
 | 🔴 **"find target"** | **Binary Search** | Use binary search in sorted data |
 | 🔴 **"valid parentheses"** | **Stack** | Use stack for matching |
-| 🔴 **"hash set"** | **Hash Set** | Use set for duplicate detection |
-| 🔴 **"hash map"** | **Hash Map** | Use map for frequency tracking |
 
 ### **💡 Pattern Recognition Cheat Sheet**
 
@@ -217,6 +209,9 @@ THEN use: Dynamic programming
 IF you see "frequency" + "count"
 THEN use: Hash map for tracking
 
+IF you see "duplicate" + "contains"
+THEN use: Hash set for detection
+
 IF you see "generate all" + "combinations"
 THEN use: Backtracking with choices
 
@@ -225,12 +220,6 @@ THEN use: Binary search
 
 IF you see "valid parentheses" + "matching"
 THEN use: Stack for brackets
-
-IF you see "duplicate" + "contains"
-THEN use: Hash set for detection
-
-IF you see "frequency" + "count"
-THEN use: Hash map for tracking
 ```
 
 ---
@@ -268,9 +257,8 @@ THEN use: Hash map for tracking
 | `"generate all"` | **Backtracking** | `def backtrack(path, choices):` |
 | `"find target"` | **Binary Search** | `while left <= right: mid = (left + right) // 2` |
 | `"frequency count"` | **Hash Map** | `count_map[item] = count_map.get(item, 0) + 1` |
+| `"duplicate"` | **Hash Set** | `char_set = set()` |
 | `"valid parentheses"` | **Stack** | `if char in '([{': stack.append(char)` |
-| `"hash set"` | **Hash Set** | `char_set = set()` |
-| `"hash map"` | **Hash Map** | `count_map = {}` |
 
 ---
 
@@ -589,161 +577,6 @@ Is it a TREE/GRAPH problem?
 │       └─ "lowest common ancestor" → **DFS + Path Tracking**
 └─ NO → Check other data structures
 ```
-
----
-
-## **⚡ Quick Reference Tables**
-
-### **🎯 Pattern → Keywords → Algorithm Mapping**
-
-| **Pattern** | **Keywords** | **Algorithm** | **Time** | **Space** | **Template** |
-|-------------|--------------|---------------|----------|-----------|--------------|
-| **Prefix Sum** | `"running sum"`, `"prefix sum"`, `"cumulative"` | Prefix Sum | O(n) | O(1) | `result[i] = result[i-1] + nums[i]` |
-| **Two Pointers** | `"X sum"`, `"palindrome"`, `"sorted array"` | Two Pointers | O(n) | O(1) | `left = 0, right = len-1` |
-| **Sliding Window** | `"substring"`, `"window"`, `"longest substring"` | Sliding Window | O(n) | O(k) | `while right < len: expand/contract` |
-| **BFS/DFS** | `"tree"`, `"graph"`, `"level order"`, `"path"` | BFS/DFS | O(V + E) | O(h) | `queue = [root]` or `def dfs(node)` |
-| **Heap** | `"top k"`, `"kth largest"`, `"priority"` | Heap/Priority Queue | O(n log k) | O(k) | `heapq.heappush/pop` |
-| **DP** | `"how many ways"`, `"maximum"`, `"minimum"` | Dynamic Programming | O(n) to O(n²) | O(n) to O(n²) | `dp[i] = max/min(dp[i-1], ...)` |
-| **Hash Map** | `"frequency"`, `"count"`, `"occurrence"`, `"track"` | Hash Map/Set | O(n) | O(k) | `count_map[item] = count_map.get(item, 0) + 1` |
-| **Backtracking** | `"generate all"`, `"permutations"`, `"combinations"`, `"subsets"` | Backtracking | O(2^n) | O(n) | `def backtrack(path, choices):` |
-| **Binary Search** | `"find target"`, `"rotated"`, `"peak element"` | Binary Search | O(log n) | O(1) | `while left <= right: mid = (left + right) // 2` |
-| **Stack** | `"valid parentheses"`, `"matching"`, `"brackets"` | Stack | O(n) | O(n) | `if char in '([{': stack.append(char)` |
-| **Hash Set** | `"duplicate"`, `"unique"`, `"contains"` | Hash Set | O(1) | O(k) | `char_set = set()` |
-| **Hash Map** | `"frequency"`, `"count"`, `"occurrence"` | Hash Map | O(1) | O(k) | `count_map = {}` |
-
-### **🔍 Keyword → Implementation Quick Lookup**
-
-| **See This** | **Think This** | **Use This** | **Example** |
-|--------------|----------------|--------------|-------------|
-| `"running sum"` | **Prefix Sum** | `result[i] = result[i-1] + nums[i]` | Running Sum of 1d Array |
-| `"longest substring"` | **Sliding Window** | `while right < len: expand/contract` | Longest Substring Without Repeating |
-| `"add two numbers"` | **Two Pointers + Carry** | `total = val1 + val2 + carry` | Add Two Numbers |
-| `"tree traversal"` | **BFS/DFS** | `queue = [root]` or `def dfs(node)` | Binary Tree Level Order |
-| `"top k elements"` | **Heap** | `heapq.nlargest(k, nums)` | Top K Frequent Elements |
-| `"how many ways"` | **DP** | `dp[i] = dp[i-1] + dp[i-2]` | Climbing Stairs |
-| `"frequency count"` | **Hash Map** | `count_map[char] = count_map.get(char, 0) + 1` | First Unique Character |
-| `"generate all"` | **Backtracking** | `def backtrack(path, choices):` | Generate Parentheses |
-| `"find target"` | **Binary Search** | `while left <= right: mid = (left + right) // 2` | Search in Rotated Array |
-| `"valid parentheses"` | **Stack** | `if char in '([{': stack.append(char)` | Valid Parentheses |
-| `"hash set"` | **Hash Set** | `char_set = set()` | Contains Duplicate |
-| `"hash map"` | **Hash Map** | `count_map = {}` | Two Sum |
-
----
-
-## **🚨 Critical Success Patterns**
-
-### **⚡ Red Flag Keywords (High Priority)**
-
-| **Keyword** | **Pattern** | **Action** |
-|-------------|-------------|------------|
-| 🔴 **"running sum"** | **Prefix Sum** | Use cumulative sum pattern |
-| 🔴 **"longest substring"** | **Sliding Window** | Use two pointers + hash set |
-| 🔴 **"add two numbers"** | **Linked List + Carry** | Use two pointers + carry handling |
-| 🔴 **"tree traversal"** | **BFS/DFS** | Use queue or recursion |
-| 🔴 **"top k"** | **Heap** | Use priority queue |
-| 🔴 **"how many ways"** | **DP** | Use dynamic programming |
-| 🔴 **"frequency count"** | **Hash Map** | Use hash map for tracking |
-| 🔴 **"generate all"** | **Backtracking** | Use backtracking with choices |
-| 🔴 **"find target"** | **Binary Search** | Use binary search in sorted data |
-| 🔴 **"valid parentheses"** | **Stack** | Use stack for matching |
-| 🔴 **"hash set"** | **Hash Set** | Use set for duplicate detection |
-| 🔴 **"hash map"** | **Hash Map** | Use map for frequency tracking |
-
----
-
-## **🎯 Master Algorithm Selection Process**
-
-### **The Ultimate Decision Framework**
-
-```
-1. READ the problem statement
-   ↓
-2. EXTRACT keywords (highlighted in color)
-   ↓
-3. IDENTIFY primary data structure
-   ↓
-4. MAP keywords to algorithm pattern
-   ↓
-5. REFINE approach based on constraints
-   ↓
-6. IMPLEMENT using template
-   ↓
-7. ANALYZE complexity
-   ↓
-8. TEST with examples
-```
-
-### **🔍 Quick Pattern Scanner**
-
-```
-IF you see "running sum" + "array"
-THEN use: Prefix sum array pattern
-
-IF you see "longest substring" + "without repeating"
-THEN use: Sliding window + hash set
-
-IF you see "linked lists" + "add"
-THEN use: Two pointers + carry handling
-
-IF you see "tree" + "traversal"
-THEN use: BFS/DFS
-
-IF you see "top k" + "elements"
-THEN use: Heap/priority queue
-
-IF you see "how many ways" + "optimization"
-THEN use: Dynamic programming
-
-IF you see "frequency" + "count"
-THEN use: Hash map for tracking
-
-IF you see "generate all" + "combinations"
-THEN use: Backtracking with choices
-
-IF you see "find target" + "sorted"
-THEN use: Binary search
-
-IF you see "valid parentheses" + "matching"
-THEN use: Stack for brackets
-
-IF you see "duplicate" + "contains"
-THEN use: Hash set for detection
-
-IF you see "frequency" + "count"
-THEN use: Hash map for tracking
-```
-
----
-
-## **🎉 Final Success Formula**
-
-### **The 3-Step Master Process**
-
-```
-1. 🎯 PATTERN RECOGNITION
-   - Read problem statement
-   - Highlight keywords in color
-   - Identify data structure hints
-   - Map to algorithm pattern
-
-2. 🧠 MENTAL MODEL
-   - Think: "What does this keyword mean?"
-   - Think: "What algorithm fits this pattern?"
-   - Think: "What template should I use?"
-
-3. ⚡ IMPLEMENTATION
-   - Use the appropriate template
-   - Apply pattern-specific optimizations
-   - Verify time/space complexity
-   - Test with examples
-```
-
-### **🏆 Success Metrics**
-
-- **Pattern Recognition**: Can identify algorithm from keywords in < 30 seconds
-- **Template Application**: Can implement solution in < 10 minutes
-- **Complexity Analysis**: Can explain time/space complexity correctly
-- **Problem Solving**: Can solve 80%+ of problems using this framework
 
 ---
 
