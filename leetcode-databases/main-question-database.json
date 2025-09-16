@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Main LeetCode Question Database - Comprehensive question generation system",
+    "created": "2024-01-15",
+    "total_questions": 150,
+    "difficulty_levels": ["beginner", "easy", "medium", "hard"],
+    "data_structures": ["variables", "arrays", "hashmaps", "strings", "linked_lists", "trees", "graphs", "stacks", "queues"],
+    "patterns": ["two_pointers", "sliding_window", "dfs", "bfs", "dp", "greedy", "sorting", "searching"]
+  },
+  "question_templates": {
+    "beginner": {
+      "variable_manipulation": {
+        "count": 20,
+        "description": "Basic variable operations, arithmetic, and simple logic",
+        "examples": [
+          {
+            "id": "var_001",
+            "title": "Add Two Numbers",
+            "description": "Given two integers a and b, return their sum.",
+            "difficulty": "beginner",
+            "data_structure": "variables",
+            "pattern": "arithmetic",
+            "input_format": "a: int, b: int",
+            "output_format": "int",
+            "constraints": "a and b are integers between -1000 and 1000",
+            "test_cases": [
+              {"input": {"a": 5, "b": 3}, "output": 8, "explanation": "5 + 3 = 8"},
+              {"input": {"a": -2, "b": 7}, "output": 5, "explanation": "-2 + 7 = 5"},
+              {"input": {"a": 0, "b": 0}, "output": 0, "explanation": "0 + 0 = 0"}
+            ],
+            "solution_template": "def add_two_numbers(a, b):\n    return a + b",
+            "time_complexity": "O(1)",
+            "space_complexity": "O(1)",
+            "tags": ["arithmetic", "variables", "beginner"]
+          }
+        ]
+      },
+      "array_basics": {
+        "count": 15,
+        "description": "Basic array operations and simple iterations",
+        "examples": [
+          {
+            "id": "arr_001",
+            "title": "Find Maximum Element",
+            "description": "Given an array of integers, find the maximum element.",
+            "difficulty": "beginner",
+            "data_structure": "arrays",
+            "pattern": "iteration",
+            "input_format": "nums: List[int]",
+            "output_format": "int",
+            "constraints": "1 <= len(nums) <= 1000, -1000 <= nums[i] <= 1000",
+            "test_cases": [
+              {"input": {"nums": [3, 7, 2, 9, 1]}, "output": 9, "explanation": "9 is the largest number in the array"},
+              {"input": {"nums": [-1, -5, -3]}, "output": -1, "explanation": "-1 is the largest (least negative) number"},
+              {"input": {"nums": [42]}, "output": 42, "explanation": "Single element array"}
+            ],
+            "solution_template": "def find_maximum(nums):\n    return max(nums)",
+            "time_complexity": "O(n)",
+            "space_complexity": "O(1)",
+            "tags": ["arrays", "iteration", "beginner"]
+          }
+        ]
+      }
+    },
+    "easy": {
+      "array_operations": {
+        "count": 25,
+        "description": "Array manipulation, searching, and basic algorithms",
+        "examples": [
+          {
+            "id": "arr_101",
+            "title": "Two Sum",
+            "description": "Given an array of integers and a target sum, find two numbers that add up to the target.",
+            "difficulty": "easy",
+            "data_structure": "arrays",
+            "pattern": "two_pointers",
+            "input_format": "nums: List[int], target: int",
+            "output_format": "List[int] (indices of the two numbers)",
+            "constraints": "2 <= len(nums) <= 10^4, -10^9 <= nums[i] <= 10^9, -10^9 <= target <= 10^9",
+            "test_cases": [
+              {"input": {"nums": [2, 7, 11, 15], "target": 9}, "output": [0, 1], "explanation": "nums[0] + nums[1] = 2 + 7 = 9"},
+              {"input": {"nums": [3, 2, 4], "target": 6}, "output": [1, 2], "explanation": "nums[1] + nums[2] = 2 + 4 = 6"},
+              {"input": {"nums": [3, 3], "target": 6}, "output": [0, 1], "explanation": "nums[0] + nums[1] = 3 + 3 = 6"}
+            ],
+            "solution_template": "def two_sum(nums, target):\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            if nums[i] + nums[j] == target:\n                return [i, j]\n    return []",
+            "time_complexity": "O(n^2)",
+            "space_complexity": "O(1)",
+            "optimized_solution": "def two_sum_optimized(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+            "optimized_time_complexity": "O(n)",
+            "optimized_space_complexity": "O(n)",
+            "tags": ["arrays", "hashmap", "two_pointers", "easy"]
+          }
+        ]
+      },
+      "hashmap_operations": {
+        "count": 20,
+        "description": "Hash map operations, key-value manipulations, and lookups",
+        "examples": [
+          {
+            "id": "hash_101",
+            "title": "Contains Duplicate",
+            "description": "Given an array of integers, return true if any value appears at least twice.",
+            "difficulty": "easy",
+            "data_structure": "hashmaps",
+            "pattern": "hash_set",
+            "input_format": "nums: List[int]",
+            "output_format": "bool",
+            "constraints": "1 <= len(nums) <= 10^5, -10^9 <= nums[i] <= 10^9",
+            "test_cases": [
+              {"input": {"nums": [1, 2, 3, 1]}, "output": true, "explanation": "1 appears twice"},
+              {"input": {"nums": [1, 2, 3, 4]}, "output": false, "explanation": "No duplicates"},
+              {"input": {"nums": [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]}, "output": true, "explanation": "Multiple duplicates exist"}
+            ],
+            "solution_template": "def contains_duplicate(nums):\n    return len(nums) != len(set(nums))",
+            "time_complexity": "O(n)",
+            "space_complexity": "O(n)",
+            "tags": ["hashmap", "arrays", "easy"]
+          }
+        ]
+      }
+    },
+    "medium": {
+      "advanced_arrays": {
+        "count": 30,
+        "description": "Complex array operations, sliding window, and advanced patterns",
+        "examples": [
+          {
+            "id": "arr_201",
+            "title": "Longest Substring Without Repeating Characters",
+            "description": "Given a string, find the length of the longest substring without repeating characters.",
+            "difficulty": "medium",
+            "data_structure": "arrays",
+            "pattern": "sliding_window",
+            "input_format": "s: str",
+            "output_format": "int",
+            "constraints": "0 <= len(s) <= 5 * 10^4, s consists of English letters, digits, symbols and spaces",
+            "test_cases": [
+              {"input": {"s": "abcabcbb"}, "output": 3, "explanation": "The longest substring is 'abc' with length 3"},
+              {"input": {"s": "bbbbb"}, "output": 1, "explanation": "The longest substring is 'b' with length 1"},
+              {"input": {"s": "pwwkew"}, "output": 3, "explanation": "The longest substring is 'wke' with length 3"}
+            ],
+            "solution_template": "def length_of_longest_substring(s):\n    char_set = set()\n    left = 0\n    max_length = 0\n    \n    for right in range(len(s)):\n        while s[right] in char_set:\n            char_set.remove(s[left])\n            left += 1\n        char_set.add(s[right])\n        max_length = max(max_length, right - left + 1)\n    \n    return max_length",
+            "time_complexity": "O(n)",
+            "space_complexity": "O(min(m, n)) where m is the size of the charset",
+            "tags": ["arrays", "sliding_window", "hashmap", "medium"]
+          }
+        ]
+      },
+      "tree_operations": {
+        "count": 25,
+        "description": "Binary tree operations, traversals, and tree algorithms",
+        "examples": [
+          {
+            "id": "tree_201",
+            "title": "Binary Tree Inorder Traversal",
+            "description": "Given the root of a binary tree, return the inorder traversal of its nodes' values.",
+            "difficulty": "medium",
+            "data_structure": "trees",
+            "pattern": "dfs",
+            "input_format": "root: TreeNode",
+            "output_format": "List[int]",
+            "constraints": "Number of nodes in the tree is in the range [0, 100], -100 <= Node.val <= 100",
+            "test_cases": [
+              {"input": {"root": [1, null, 2, 3]}, "output": [1, 3, 2], "explanation": "Inorder: left -> root -> right"},
+              {"input": {"root": []}, "output": [], "explanation": "Empty tree"},
+              {"input": {"root": [1]}, "output": [1], "explanation": "Single node"}
+            ],
+            "solution_template": "def inorder_traversal(root):\n    result = []\n    \n    def inorder(node):\n        if node:\n            inorder(node.left)\n            result.append(node.val)\n            inorder(node.right)\n    \n    inorder(root)\n    return result",
+            "time_complexity": "O(n)",
+            "space_complexity": "O(h) where h is the height of the tree",
+            "tags": ["trees", "dfs", "recursion", "medium"]
+          }
+        ]
+      }
+    },
+    "hard": {
+      "complex_algorithms": {
+        "count": 20,
+        "description": "Complex algorithms, dynamic programming, and advanced data structures",
+        "examples": [
+          {
+            "id": "dp_301",
+            "title": "Longest Increasing Subsequence",
+            "description": "Given an integer array, return the length of the longest strictly increasing subsequence.",
+            "difficulty": "hard",
+            "data_structure": "arrays",
+            "pattern": "dp",
+            "input_format": "nums: List[int]",
+            "output_format": "int",
+            "constraints": "1 <= len(nums) <= 2500, -10^4 <= nums[i] <= 10^4",
+            "test_cases": [
+              {"input": {"nums": [10, 9, 2, 5, 3, 7, 101, 18]}, "output": 4, "explanation": "The longest increasing subsequence is [2, 3, 7, 101]"},
+              {"input": {"nums": [0, 1, 0, 3, 2, 3]}, "output": 4, "explanation": "The longest increasing subsequence is [0, 1, 2, 3]"},
+              {"input": {"nums": [7, 7, 7, 7, 7, 7, 7]}, "output": 1, "explanation": "The longest increasing subsequence is [7]"}
+            ],
+            "solution_template": "def length_of_lis(nums):\n    if not nums:\n        return 0\n    \n    dp = [1] * len(nums)\n    \n    for i in range(1, len(nums)):\n        for j in range(i):\n            if nums[j] < nums[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    \n    return max(dp)",
+            "time_complexity": "O(n^2)",
+            "space_complexity": "O(n)",
+            "optimized_solution": "def length_of_lis_optimized(nums):\n    import bisect\n    \n    tails = []\n    for num in nums:\n        pos = bisect.bisect_left(tails, num)\n        if pos == len(tails):\n            tails.append(num)\n        else:\n            tails[pos] = num\n    \n    return len(tails)",
+            "optimized_time_complexity": "O(n log n)",
+            "optimized_space_complexity": "O(n)",
+            "tags": ["arrays", "dp", "binary_search", "hard"]
+          }
+        ]
+      }
+    }
+  },
+  "question_generation_rules": {
+    "beginner": {
+      "max_complexity": "O(n)",
+      "max_data_size": 1000,
+      "allowed_patterns": ["iteration", "arithmetic", "simple_logic"],
+      "required_concepts": ["variables", "basic_arrays"]
+    },
+    "easy": {
+      "max_complexity": "O(n log n)",
+      "max_data_size": 10000,
+      "allowed_patterns": ["two_pointers", "hashmap", "simple_sorting"],
+      "required_concepts": ["arrays", "hashmaps", "strings"]
+    },
+    "medium": {
+      "max_complexity": "O(n^2)",
+      "max_data_size": 50000,
+      "allowed_patterns": ["sliding_window", "dfs", "bfs", "dp_basic"],
+      "required_concepts": ["trees", "graphs", "advanced_arrays"]
+    },
+    "hard": {
+      "max_complexity": "O(n^3) or exponential",
+      "max_data_size": 100000,
+      "allowed_patterns": ["complex_dp", "advanced_graphs", "optimization"],
+      "required_concepts": ["advanced_trees", "complex_graphs", "optimization"]
+    }
+  }
+}

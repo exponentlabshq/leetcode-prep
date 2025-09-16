@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "name": "Variable Manipulation Database",
+    "description": "Beginner-level questions focusing on basic variable operations, arithmetic, and simple logic",
+    "difficulty": "beginner",
+    "prerequisites": ["basic_python_syntax", "arithmetic_operations"],
+    "learning_objectives": [
+      "Understand basic variable operations",
+      "Master arithmetic and logical operations",
+      "Learn simple conditional statements",
+      "Practice basic input/output handling"
+    ],
+    "total_questions": 25,
+    "estimated_time": "2-3 hours"
+  },
+  "question_categories": {
+    "arithmetic_operations": {
+      "description": "Basic arithmetic operations with variables",
+      "count": 8,
+      "questions": [
+        {
+          "id": "var_001",
+          "title": "Add Two Numbers",
+          "description": "Given two integers a and b, return their sum.",
+          "difficulty": "beginner",
+          "data_structure": "variables",
+          "pattern": "arithmetic",
+          "input_format": "a: int, b: int",
+          "output_format": "int",
+          "constraints": "a and b are integers between -1000 and 1000",
+          "test_cases": [
+            {"input": {"a": 5, "b": 3}, "output": 8, "explanation": "5 + 3 = 8"},
+            {"input": {"a": -2, "b": 7}, "output": 5, "explanation": "-2 + 7 = 5"},
+            {"input": {"a": 0, "b": 0}, "output": 0, "explanation": "0 + 0 = 0"},
+            {"input": {"a": -5, "b": -3}, "output": -8, "explanation": "-5 + (-3) = -8"}
+          ],
+          "solution_template": "def add_two_numbers(a, b):\n    return a + b",
+          "time_complexity": "O(1)",
+          "space_complexity": "O(1)",
+          "tags": ["arithmetic", "variables", "beginner"],
+          "learning_points": [
+            "Basic addition operation",
+            "Handling negative numbers",
+            "Return statement usage"
+          ]
+        },
+        {
+          "id": "var_002",
+          "title": "Multiply Three Numbers",
+          "description": "Given three integers a, b, and c, return their product.",
+          "difficulty": "beginner",
+          "data_structure": "variables",
+          "pattern": "arithmetic",
+          "input_format": "a: int, b: int, c: int",
+          "output_format": "int",
+          "constraints": "a, b, and c are integers between -100 and 100",
+          "test_cases": [
+            {"input": {"a": 2, "b": 3, "c": 4}, "output": 24, "explanation": "2 * 3 * 4 = 24"},
+            {"input": {"a": -1, "b": 5, "c": -2}, "output": 10, "explanation": "(-1) * 5 * (-2) = 10"},
+            {"input": {"a": 0, "b": 10, "c": 5}, "output": 0, "explanation": "0 * 10 * 5 = 0"}
+          ],
+          "solution_template": "def multiply_three_numbers(a, b, c):\n    return a * b * c",
+          "time_complexity": "O(1)",
+          "space_complexity": "O(1)",
+          "tags": ["arithmetic", "variables", "beginner"],
+          "learning_points": [
+            "Multiple variable operations",
+            "Multiplication with multiple factors",
+            "Zero multiplication property"
+          ]
+        }
+      ]
+    },
+    "logical_operations": {
+      "description": "Boolean logic and conditional operations",
+      "count": 6,
+      "questions": [
+        {
+          "id": "var_003",
+          "title": "Is Even or Odd",
+          "description": "Given an integer n, return 'even' if n is even, 'odd' if n is odd.",
+          "difficulty": "beginner",
+          "data_structure": "variables",
+          "pattern": "conditional",
+          "input_format": "n: int",
+          "output_format": "str",
+          "constraints": "n is an integer between -1000 and 1000",
+          "test_cases": [
+            {"input": {"n": 4}, "output": "even", "explanation": "4 is divisible by 2"},
+            {"input": {"n": 7}, "output": "odd", "explanation": "7 is not divisible by 2"},
+            {"input": {"n": 0}, "output": "even", "explanation": "0 is divisible by 2"},
+            {"input": {"n": -3}, "output": "odd", "explanation": "-3 is not divisible by 2"}
+          ],
+          "solution_template": "def is_even_or_odd(n):\n    if n % 2 == 0:\n        return 'even'\n    else:\n        return 'odd'",
+          "time_complexity": "O(1)",
+          "space_complexity": "O(1)",
+          "tags": ["conditional", "modulo", "beginner"],
+          "learning_points": [
+            "Modulo operator usage",
+            "Conditional statements (if-else)",
+            "String return values"
+          ]
+        },
+        {
+          "id": "var_004",
+          "title": "Compare Two Numbers",
+          "description": "Given two integers a and b, return 'greater' if a > b, 'smaller' if a < b, 'equal' if a == b.",
+          "difficulty": "beginner",
+          "data_structure": "variables",
+          "pattern": "conditional",
+          "input_format": "a: int, b: int",
+          "output_format": "str",
+          "constraints": "a and b are integers between -1000 and 1000",
+          "test_cases": [
+            {"input": {"a": 5, "b": 3}, "output": "greater", "explanation": "5 > 3"},
+            {"input": {"a": 2, "b": 8}, "output": "smaller", "explanation": "2 < 8"},
+            {"input": {"a": 4, "b": 4}, "output": "equal", "explanation": "4 == 4"},
+            {"input": {"a": -5, "b": -2}, "output": "smaller", "explanation": "-5 < -2"}
+          ],
+          "solution_template": "def compare_two_numbers(a, b):\n    if a > b:\n        return 'greater'\n    elif a < b:\n        return 'smaller'\n    else:\n        return 'equal'",
+          "time_complexity": "O(1)",
+          "space_complexity": "O(1)",
+          "tags": ["conditional", "comparison", "beginner"],
+          "learning_points": [
+            "Comparison operators",
+            "If-elif-else statements",
+            "Multiple condition handling"
+          ]
+        }
+      ]
+    },
+    "mathematical_functions": {
+      "description": "Basic mathematical operations and functions",
+      "count": 5,
+      "questions": [
+        {
+          "id": "var_005",
+          "title": "Calculate Area of Rectangle",
+          "description": "Given length and width of a rectangle, calculate its area.",
+          "difficulty": "beginner",
+          "data_structure": "variables",
+          "pattern": "mathematical",
+          "input_format": "length: float, width: float",
+          "output_format": "float",
+          "constraints": "length and width are positive numbers between 0.1 and 1000.0",
+          "test_cases": [
+            {"input": {"length": 5.0, "width": 3.0}, "output": 15.0, "explanation": "5.0 * 3.0 = 15.0"},
+            {"input": {"length": 2.5, "width": 4.0}, "output": 10.0, "explanation": "2.5 * 4.0 = 10.0"},
+            {"input": {"length": 1.0, "width": 1.0}, "output": 1.0, "explanation": "1.0 * 1.0 = 1.0"}
+          ],
+          "solution_template": "def calculate_area(length, width):\n    return length * width",
+          "time_complexity": "O(1)",
+          "space_complexity": "O(1)",
+          "tags": ["mathematical", "geometry", "beginner"],
+          "learning_points": [
+            "Float arithmetic",
+            "Geometric calculations",
+            "Function parameters"
+          ]
+        },
+        {
+          "id": "var_006",
+          "title": "Calculate Circle Circumference",
+          "description": "Given the radius of a circle, calculate its circumference. Use π = 3.14159.",
+          "difficulty": "beginner",
+          "data_structure": "variables",
+          "pattern": "mathematical",
+          "input_format": "radius: float",
+          "output_format": "float",
+          "constraints": "radius is a positive number between 0.1 and 1000.0",
+          "test_cases": [
+            {"input": {"radius": 5.0}, "output": 31.4159, "explanation": "2 * 3.14159 * 5.0 = 31.4159"},
+            {"input": {"radius": 1.0}, "output": 6.28318, "explanation": "2 * 3.14159 * 1.0 = 6.28318"},
+            {"input": {"radius": 0.5}, "output": 3.14159, "explanation": "2 * 3.14159 * 0.5 = 3.14159"}
+          ],
+          "solution_template": "def calculate_circumference(radius):\n    pi = 3.14159\n    return 2 * pi * radius",
+          "time_complexity": "O(1)",
+          "space_complexity": "O(1)",
+          "tags": ["mathematical", "geometry", "constants", "beginner"],
+          "learning_points": [
+            "Mathematical constants",
+            "Circle geometry",
+            "Variable assignment"
+          ]
+        }
+      ]
+    },
+    "string_operations": {
+      "description": "Basic string manipulation with variables",
+      "count": 6,
+      "questions": [
+        {
+          "id": "var_007",
+          "title": "Concatenate Two Strings",
+          "description": "Given two strings, concatenate them and return the result.",
+          "difficulty": "beginner",
+          "data_structure": "variables",
+          "pattern": "string_manipulation",
+          "input_format": "str1: str, str2: str",
+          "output_format": "str",
+          "constraints": "Both strings have length between 1 and 100",
+          "test_cases": [
+            {"input": {"str1": "Hello", "str2": "World"}, "output": "HelloWorld", "explanation": "Concatenating 'Hello' and 'World'"},
+            {"input": {"str1": "Python", "str2": "Programming"}, "output": "PythonProgramming", "explanation": "Concatenating 'Python' and 'Programming'"},
+            {"input": {"str1": "a", "str2": "b"}, "output": "ab", "explanation": "Concatenating single characters"}
+          ],
+          "solution_template": "def concatenate_strings(str1, str2):\n    return str1 + str2",
+          "time_complexity": "O(m + n) where m and n are string lengths",
+          "space_complexity": "O(m + n)",
+          "tags": ["strings", "concatenation", "beginner"],
+          "learning_points": [
+            "String concatenation",
+            "String operations",
+            "Return string values"
+          ]
+        },
+        {
+          "id": "var_008",
+          "title": "Count String Length",
+          "description": "Given a string, return its length.",
+          "difficulty": "beginner",
+          "data_structure": "variables",
+          "pattern": "string_manipulation",
+          "input_format": "s: str",
+          "output_format": "int",
+          "constraints": "String length is between 0 and 1000",
+          "test_cases": [
+            {"input": {"s": "Hello"}, "output": 5, "explanation": "'Hello' has 5 characters"},
+            {"input": {"s": ""}, "output": 0, "explanation": "Empty string has 0 characters"},
+            {"input": {"s": "a"}, "output": 1, "explanation": "Single character string has length 1"}
+          ],
+          "solution_template": "def count_string_length(s):\n    return len(s)",
+          "time_complexity": "O(1)",
+          "space_complexity": "O(1)",
+          "tags": ["strings", "length", "beginner"],
+          "learning_points": [
+            "String length function",
+            "Built-in functions",
+            "Edge case handling (empty string)"
+          ]
+        }
+      ]
+    }
+  },
+  "progression_path": {
+    "step_1": {
+      "focus": "Basic arithmetic operations",
+      "questions": ["var_001", "var_002"],
+      "learning_goal": "Master addition, subtraction, multiplication, division"
+    },
+    "step_2": {
+      "focus": "Conditional logic",
+      "questions": ["var_003", "var_004"],
+      "learning_goal": "Understand if-else statements and comparisons"
+    },
+    "step_3": {
+      "focus": "Mathematical functions",
+      "questions": ["var_005", "var_006"],
+      "learning_goal": "Apply arithmetic to solve real-world problems"
+    },
+    "step_4": {
+      "focus": "String operations",
+      "questions": ["var_007", "var_008"],
+      "learning_goal": "Handle text data and string manipulation"
+    }
+  },
+  "assessment_criteria": {
+    "beginner_ready": {
+      "requirements": [
+        "Can perform basic arithmetic operations",
+        "Understands conditional statements",
+        "Can work with simple variables",
+        "Handles basic input/output"
+      ],
+      "next_level": "array_operations"
+    }
+  }
+}

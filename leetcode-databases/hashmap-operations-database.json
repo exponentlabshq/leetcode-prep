@@ -1,0 +1,367 @@
+{
+  "metadata": {
+    "name": "Hashmap Operations Database",
+    "description": "Comprehensive hashmap/hash table questions from beginner to advanced levels",
+    "difficulty_range": ["beginner", "easy", "medium", "hard"],
+    "prerequisites": ["variable_manipulation", "array_operations", "basic_loops"],
+    "learning_objectives": [
+      "Master hashmap creation and manipulation",
+      "Understand key-value pair operations",
+      "Learn hashmap-based algorithms and patterns",
+      "Practice frequency counting and lookups",
+      "Optimize hashmap operations for performance"
+    ],
+    "total_questions": 40,
+    "estimated_time": "6-8 hours"
+  },
+  "question_categories": {
+    "basic_hashmap_operations": {
+      "description": "Fundamental hashmap operations and key-value manipulations",
+      "difficulty": "beginner",
+      "count": 8,
+      "questions": [
+        {
+          "id": "hash_001",
+          "title": "Create Frequency Map",
+          "description": "Given an array of integers, create a frequency map (hashmap) where keys are the numbers and values are their counts.",
+          "difficulty": "beginner",
+          "data_structure": "hashmaps",
+          "pattern": "frequency_counting",
+          "input_format": "nums: List[int]",
+          "output_format": "Dict[int, int]",
+          "constraints": "0 <= len(nums) <= 1000, -1000 <= nums[i] <= 1000",
+          "test_cases": [
+            {"input": {"nums": [1, 2, 2, 3, 3, 3]}, "output": {"1": 1, "2": 2, "3": 3}, "explanation": "1 appears once, 2 appears twice, 3 appears three times"},
+            {"input": {"nums": [5, 5, 5, 5]}, "output": {"5": 4}, "explanation": "5 appears four times"},
+            {"input": {"nums": []}, "output": {}, "explanation": "Empty array results in empty frequency map"},
+            {"input": {"nums": [1, 2, 3, 4, 5]}, "output": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1}, "explanation": "All numbers appear once"}
+          ],
+          "solution_template": "def create_frequency_map(nums):\n    freq_map = {}\n    for num in nums:\n        freq_map[num] = freq_map.get(num, 0) + 1\n    return freq_map",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(n)",
+          "tags": ["hashmaps", "frequency_counting", "beginner"],
+          "learning_points": [
+            "Hashmap creation",
+            "Key-value pair operations",
+            "get() method with default value",
+            "Frequency counting pattern"
+          ]
+        },
+        {
+          "id": "hash_002",
+          "title": "Check Key Existence",
+          "description": "Given a hashmap and a key, return True if the key exists, False otherwise.",
+          "difficulty": "beginner",
+          "data_structure": "hashmaps",
+          "pattern": "key_lookup",
+          "input_format": "hashmap: Dict[str, int], key: str",
+          "output_format": "bool",
+          "constraints": "0 <= len(hashmap) <= 1000",
+          "test_cases": [
+            {"input": {"hashmap": {"apple": 5, "banana": 3, "cherry": 8}, "key": "apple"}, "output": true, "explanation": "Key 'apple' exists in the hashmap"},
+            {"input": {"hashmap": {"apple": 5, "banana": 3, "cherry": 8}, "key": "grape"}, "output": false, "explanation": "Key 'grape' does not exist in the hashmap"},
+            {"input": {"hashmap": {}, "key": "any"}, "output": false, "explanation": "Empty hashmap has no keys"},
+            {"input": {"hashmap": {"test": 1}, "key": "test"}, "output": true, "explanation": "Key 'test' exists in the hashmap"}
+          ],
+          "solution_template": "def check_key_exists(hashmap, key):\n    return key in hashmap",
+          "time_complexity": "O(1)",
+          "space_complexity": "O(1)",
+          "tags": ["hashmaps", "key_lookup", "beginner"],
+          "learning_points": [
+            "Key existence checking",
+            "in operator usage",
+            "Hashmap lookup efficiency"
+          ]
+        }
+      ]
+    },
+    "hashmap_searching": {
+      "description": "Search operations using hashmaps",
+      "difficulty": "easy",
+      "count": 10,
+      "questions": [
+        {
+          "id": "hash_101",
+          "title": "Two Sum (Hashmap)",
+          "description": "Given an array of integers and a target sum, find two numbers that add up to the target using a hashmap.",
+          "difficulty": "easy",
+          "data_structure": "hashmaps",
+          "pattern": "complement_search",
+          "input_format": "nums: List[int], target: int",
+          "output_format": "List[int] (indices of the two numbers)",
+          "constraints": "2 <= len(nums) <= 10000, -10^9 <= nums[i] <= 10^9, -10^9 <= target <= 10^9",
+          "test_cases": [
+            {"input": {"nums": [2, 7, 11, 15], "target": 9}, "output": [0, 1], "explanation": "nums[0] + nums[1] = 2 + 7 = 9"},
+            {"input": {"nums": [3, 2, 4], "target": 6}, "output": [1, 2], "explanation": "nums[1] + nums[2] = 2 + 4 = 6"},
+            {"input": {"nums": [3, 3], "target": 6}, "output": [0, 1], "explanation": "nums[0] + nums[1] = 3 + 3 = 6"},
+            {"input": {"nums": [1, 2, 3, 4, 5], "target": 10}, "output": [], "explanation": "No two numbers sum to 10"}
+          ],
+          "solution_template": "def two_sum_hashmap(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(n)",
+          "tags": ["hashmaps", "two_sum", "complement_search", "easy"],
+          "learning_points": [
+            "Complement search technique",
+            "Hashmap for O(1) lookup",
+            "Index tracking in hashmap",
+            "One-pass solution"
+          ]
+        },
+        {
+          "id": "hash_102",
+          "title": "Contains Duplicate",
+          "description": "Given an array of integers, return True if any value appears at least twice, False otherwise.",
+          "difficulty": "easy",
+          "data_structure": "hashmaps",
+          "pattern": "duplicate_detection",
+          "input_format": "nums: List[int]",
+          "output_format": "bool",
+          "constraints": "1 <= len(nums) <= 10^5, -10^9 <= nums[i] <= 10^9",
+          "test_cases": [
+            {"input": {"nums": [1, 2, 3, 1]}, "output": true, "explanation": "1 appears twice"},
+            {"input": {"nums": [1, 2, 3, 4]}, "output": false, "explanation": "No duplicates"},
+            {"input": {"nums": [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]}, "output": true, "explanation": "Multiple duplicates exist"},
+            {"input": {"nums": [1]}, "output": false, "explanation": "Single element has no duplicates"}
+          ],
+          "solution_template": "def contains_duplicate(nums):\n    seen = set()\n    for num in nums:\n        if num in seen:\n            return True\n        seen.add(num)\n    return False",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(n)",
+          "tags": ["hashmaps", "duplicate_detection", "easy"],
+          "learning_points": [
+            "Set for duplicate detection",
+            "Early return optimization",
+            "Hashmap vs set usage"
+          ]
+        }
+      ]
+    },
+    "frequency_analysis": {
+      "description": "Frequency counting and analysis using hashmaps",
+      "difficulty": "easy",
+      "count": 8,
+      "questions": [
+        {
+          "id": "hash_201",
+          "title": "Find Most Frequent Element",
+          "description": "Given an array of integers, find the element that appears most frequently. If there's a tie, return any of them.",
+          "difficulty": "easy",
+          "data_structure": "hashmaps",
+          "pattern": "frequency_analysis",
+          "input_format": "nums: List[int]",
+          "output_format": "int",
+          "constraints": "1 <= len(nums) <= 1000, -1000 <= nums[i] <= 1000",
+          "test_cases": [
+            {"input": {"nums": [1, 2, 2, 3, 3, 3]}, "output": 3, "explanation": "3 appears most frequently (3 times)"},
+            {"input": {"nums": [1, 1, 2, 2]}, "output": 1, "explanation": "1 and 2 both appear twice, return 1"},
+            {"input": {"nums": [5, 5, 5, 5]}, "output": 5, "explanation": "5 appears most frequently (4 times)"},
+            {"input": {"nums": [1, 2, 3, 4, 5]}, "output": 1, "explanation": "All elements appear once, return 1"}
+          ],
+          "solution_template": "def find_most_frequent(nums):\n    freq_map = {}\n    for num in nums:\n        freq_map[num] = freq_map.get(num, 0) + 1\n    \n    max_freq = 0\n    most_frequent = nums[0]\n    \n    for num, freq in freq_map.items():\n        if freq > max_freq:\n            max_freq = freq\n            most_frequent = num\n    \n    return most_frequent",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(n)",
+          "tags": ["hashmaps", "frequency_analysis", "easy"],
+          "learning_points": [
+            "Frequency counting",
+            "Finding maximum frequency",
+            "Iterating through hashmap items"
+          ]
+        },
+        {
+          "id": "hash_202",
+          "title": "Group Anagrams",
+          "description": "Given an array of strings, group the anagrams together.",
+          "difficulty": "easy",
+          "data_structure": "hashmaps",
+          "pattern": "grouping",
+          "input_format": "strs: List[str]",
+          "output_format": "List[List[str]]",
+          "constraints": "1 <= len(strs) <= 10000, 0 <= len(strs[i]) <= 100",
+          "test_cases": [
+            {"input": {"strs": ["eat", "tea", "tan", "ate", "nat", "bat"]}, "output": [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]], "explanation": "Group anagrams together"},
+            {"input": {"strs": [""]}, "output": [[""]], "explanation": "Single empty string"},
+            {"input": {"strs": ["a"]}, "output": [["a"]], "explanation": "Single character"},
+            {"input": {"strs": ["abc", "bca", "cab", "xyz", "zyx"]}, "output": [["abc", "bca", "cab"], ["xyz", "zyx"]], "explanation": "Group anagrams by sorted characters"}
+          ],
+          "solution_template": "def group_anagrams(strs):\n    from collections import defaultdict\n    \n    groups = defaultdict(list)\n    \n    for s in strs:\n        key = ''.join(sorted(s))\n        groups[key].append(s)\n    \n    return list(groups.values())",
+          "time_complexity": "O(n * m log m) where n is number of strings, m is average length",
+          "space_complexity": "O(n * m)",
+          "tags": ["hashmaps", "anagrams", "grouping", "easy"],
+          "learning_points": [
+            "Anagram detection using sorting",
+            "Grouping with defaultdict",
+            "String sorting for keys"
+          ]
+        }
+      ]
+    },
+    "advanced_hashmap_patterns": {
+      "description": "Complex hashmap patterns and algorithms",
+      "difficulty": "medium",
+      "count": 8,
+      "questions": [
+        {
+          "id": "hash_301",
+          "title": "Longest Substring Without Repeating Characters",
+          "description": "Given a string, find the length of the longest substring without repeating characters using a hashmap.",
+          "difficulty": "medium",
+          "data_structure": "hashmaps",
+          "pattern": "sliding_window_with_hashmap",
+          "input_format": "s: str",
+          "output_format": "int",
+          "constraints": "0 <= len(s) <= 50000, s consists of English letters, digits, symbols and spaces",
+          "test_cases": [
+            {"input": {"s": "abcabcbb"}, "output": 3, "explanation": "The longest substring is 'abc' with length 3"},
+            {"input": {"s": "bbbbb"}, "output": 1, "explanation": "The longest substring is 'b' with length 1"},
+            {"input": {"s": "pwwkew"}, "output": 3, "explanation": "The longest substring is 'wke' with length 3"},
+            {"input": {"s": ""}, "output": 0, "explanation": "Empty string has length 0"}
+          ],
+          "solution_template": "def length_of_longest_substring(s):\n    char_map = {}\n    left = 0\n    max_length = 0\n    \n    for right in range(len(s)):\n        if s[right] in char_map and char_map[s[right]] >= left:\n            left = char_map[s[right]] + 1\n        \n        char_map[s[right]] = right\n        max_length = max(max_length, right - left + 1)\n    \n    return max_length",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(min(m, n)) where m is the size of the charset",
+          "tags": ["hashmaps", "sliding_window", "medium"],
+          "learning_points": [
+            "Sliding window with hashmap",
+            "Character position tracking",
+            "Window boundary management"
+          ]
+        },
+        {
+          "id": "hash_302",
+          "title": "Subarray Sum Equals K",
+          "description": "Given an array of integers and an integer k, return the total number of continuous subarrays whose sum equals to k.",
+          "difficulty": "medium",
+          "data_structure": "hashmaps",
+          "pattern": "prefix_sum",
+          "input_format": "nums: List[int], k: int",
+          "output_format": "int",
+          "constraints": "1 <= len(nums) <= 20000, -1000 <= nums[i] <= 1000, -10^7 <= k <= 10^7",
+          "test_cases": [
+            {"input": {"nums": [1, 1, 1], "k": 2}, "output": 2, "explanation": "Two subarrays [1,1] and [1,1] sum to 2"},
+            {"input": {"nums": [1, 2, 3], "k": 3}, "output": 2, "explanation": "Two subarrays [1,2] and [3] sum to 3"},
+            {"input": {"nums": [1, -1, 0], "k": 0}, "output": 3, "explanation": "Three subarrays sum to 0: [1,-1], [0], [1,-1,0]"},
+            {"input": {"nums": [1, 2, 3, 4, 5], "k": 9}, "output": 1, "explanation": "One subarray [2,3,4] sums to 9"}
+          ],
+          "solution_template": "def subarray_sum(nums, k):\n    from collections import defaultdict\n    \n    prefix_sum = defaultdict(int)\n    prefix_sum[0] = 1  # Empty subarray has sum 0\n    \n    current_sum = 0\n    count = 0\n    \n    for num in nums:\n        current_sum += num\n        if current_sum - k in prefix_sum:\n            count += prefix_sum[current_sum - k]\n        prefix_sum[current_sum] += 1\n    \n    return count",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(n)",
+          "tags": ["hashmaps", "prefix_sum", "medium"],
+          "learning_points": [
+            "Prefix sum technique",
+            "Hashmap for sum frequency",
+            "Subarray counting"
+          ]
+        }
+      ]
+    },
+    "hashmap_optimization": {
+      "description": "Advanced hashmap optimization and complex patterns",
+      "difficulty": "hard",
+      "count": 6,
+      "questions": [
+        {
+          "id": "hash_401",
+          "title": "LRU Cache",
+          "description": "Design and implement a data structure for Least Recently Used (LRU) cache using hashmap and doubly linked list.",
+          "difficulty": "hard",
+          "data_structure": "hashmaps",
+          "pattern": "lru_cache",
+          "input_format": "capacity: int",
+          "output_format": "LRUCache class with get() and put() methods",
+          "constraints": "1 <= capacity <= 3000, 0 <= key <= 10^4, 0 <= value <= 10^5",
+          "test_cases": [
+            {"input": {"capacity": 2}, "operations": [["put", 1, 1], ["put", 2, 2], ["get", 1], ["put", 3, 3], ["get", 2], ["put", 4, 4], ["get", 1], ["get", 3], ["get", 4]], "output": [null, null, 1, null, -1, null, -1, 3, 4], "explanation": "LRU cache operations with capacity 2"},
+            {"input": {"capacity": 1}, "operations": [["put", 1, 1], ["get", 1], ["put", 2, 2], ["get", 1], ["get", 2]], "output": [null, 1, null, -1, 2], "explanation": "LRU cache with capacity 1"}
+          ],
+          "solution_template": "class LRUCache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.cache = {}\n        self.head = Node(0, 0)\n        self.tail = Node(0, 0)\n        self.head.next = self.tail\n        self.tail.prev = self.head\n    \n    def get(self, key):\n        if key in self.cache:\n            node = self.cache[key]\n            self._remove(node)\n            self._add(node)\n            return node.value\n        return -1\n    \n    def put(self, key, value):\n        if key in self.cache:\n            self._remove(self.cache[key])\n        elif len(self.cache) >= self.capacity:\n            lru = self.tail.prev\n            self._remove(lru)\n            del self.cache[lru.key]\n        \n        node = Node(key, value)\n        self.cache[key] = node\n        self._add(node)\n    \n    def _add(self, node):\n        nxt = self.head.next\n        self.head.next = node\n        node.prev = self.head\n        node.next = nxt\n        nxt.prev = node\n    \n    def _remove(self, node):\n        prev = node.prev\n        nxt = node.next\n        prev.next = nxt\n        nxt.prev = prev\n\nclass Node:\n    def __init__(self, key, value):\n        self.key = key\n        self.value = value\n        self.prev = None\n        self.next = None",
+          "time_complexity": "O(1) for both get and put",
+          "space_complexity": "O(capacity)",
+          "tags": ["hashmaps", "doubly_linked_list", "lru_cache", "hard"],
+          "learning_points": [
+            "LRU cache design",
+            "Hashmap + doubly linked list",
+            "O(1) operations",
+            "Node management"
+          ]
+        }
+      ]
+    }
+  },
+  "progression_path": {
+    "beginner": {
+      "focus": "Basic hashmap operations and frequency counting",
+      "questions": ["hash_001", "hash_002"],
+      "learning_goal": "Master hashmap creation, key-value operations, and basic lookups"
+    },
+    "easy": {
+      "focus": "Hashmap searching and frequency analysis",
+      "questions": ["hash_101", "hash_102", "hash_201", "hash_202"],
+      "learning_goal": "Learn complement search, duplicate detection, and frequency analysis"
+    },
+    "medium": {
+      "focus": "Advanced hashmap patterns and algorithms",
+      "questions": ["hash_301", "hash_302"],
+      "learning_goal": "Master sliding window with hashmap and prefix sum techniques"
+    },
+    "hard": {
+      "focus": "Complex hashmap-based data structures",
+      "questions": ["hash_401"],
+      "learning_goal": "Design advanced data structures using hashmap combinations"
+    }
+  },
+  "performance_analysis": {
+    "time_complexity_guide": {
+      "O(1)": "Constant time - hashmap lookup, insertion, deletion",
+      "O(n)": "Linear time - single pass through data",
+      "O(n log n)": "Linearithmic time - sorting keys or values",
+      "O(n^2)": "Quadratic time - nested operations (rare with hashmaps)"
+    },
+    "space_complexity_guide": {
+      "O(1)": "Constant space - fixed size hashmap",
+      "O(n)": "Linear space - proportional to input size",
+      "O(k)": "Space proportional to unique elements"
+    }
+  },
+  "common_patterns": {
+    "frequency_counting": {
+      "description": "Count occurrences of elements using hashmap",
+      "use_cases": ["duplicate detection", "most frequent element", "anagram grouping"],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)"
+    },
+    "complement_search": {
+      "description": "Search for complement values to achieve target",
+      "use_cases": ["two sum", "three sum", "pair finding"],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)"
+    },
+    "prefix_sum": {
+      "description": "Use hashmap to track prefix sums for subarray problems",
+      "use_cases": ["subarray sum", "continuous subarray problems"],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)"
+    },
+    "sliding_window_with_hashmap": {
+      "description": "Maintain window state using hashmap",
+      "use_cases": ["longest substring", "window-based problems"],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(k) where k is window size"
+    }
+  },
+  "hashmap_vs_other_structures": {
+    "vs_array": {
+      "hashmap_advantage": "O(1) lookup vs O(n) linear search",
+      "array_advantage": "Better cache locality, simpler structure",
+      "when_to_use_hashmap": "Frequent lookups, sparse data, key-value relationships"
+    },
+    "vs_set": {
+      "hashmap_advantage": "Can store additional information with keys",
+      "set_advantage": "Simpler for membership testing only",
+      "when_to_use_hashmap": "Need to store counts, positions, or other metadata"
+    },
+    "vs_tree": {
+      "hashmap_advantage": "O(1) average case operations",
+      "tree_advantage": "Guaranteed O(log n) operations, ordered traversal",
+      "when_to_use_hashmap": "Unordered data, frequent random access"
+    }
+  }
+}

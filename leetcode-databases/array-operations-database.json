@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "name": "Array Operations Database",
+    "description": "Comprehensive array manipulation questions from beginner to advanced levels",
+    "difficulty_range": ["beginner", "easy", "medium", "hard"],
+    "prerequisites": ["variable_manipulation", "basic_loops", "conditional_statements"],
+    "learning_objectives": [
+      "Master array indexing and iteration",
+      "Understand array manipulation techniques",
+      "Learn common array patterns (two pointers, sliding window)",
+      "Practice array-based algorithms",
+      "Optimize array operations for performance"
+    ],
+    "total_questions": 50,
+    "estimated_time": "8-10 hours"
+  },
+  "question_categories": {
+    "basic_array_operations": {
+      "description": "Fundamental array operations and iterations",
+      "difficulty": "beginner",
+      "count": 12,
+      "questions": [
+        {
+          "id": "arr_001",
+          "title": "Find Maximum Element",
+          "description": "Given an array of integers, find the maximum element.",
+          "difficulty": "beginner",
+          "data_structure": "arrays",
+          "pattern": "iteration",
+          "input_format": "nums: List[int]",
+          "output_format": "int",
+          "constraints": "1 <= len(nums) <= 1000, -1000 <= nums[i] <= 1000",
+          "test_cases": [
+            {"input": {"nums": [3, 7, 2, 9, 1]}, "output": 9, "explanation": "9 is the largest number in the array"},
+            {"input": {"nums": [-1, -5, -3]}, "output": -1, "explanation": "-1 is the largest (least negative) number"},
+            {"input": {"nums": [42]}, "output": 42, "explanation": "Single element array"},
+            {"input": {"nums": [5, 5, 5, 5]}, "output": 5, "explanation": "All elements are the same"}
+          ],
+          "solution_template": "def find_maximum(nums):\n    if not nums:\n        return None\n    \n    max_val = nums[0]\n    for num in nums[1:]:\n        if num > max_val:\n            max_val = num\n    \n    return max_val",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(1)",
+          "tags": ["arrays", "iteration", "beginner"],
+          "learning_points": [
+            "Array iteration",
+            "Variable tracking",
+            "Edge case handling (empty array)"
+          ]
+        },
+        {
+          "id": "arr_002",
+          "title": "Sum of Array Elements",
+          "description": "Given an array of integers, calculate the sum of all elements.",
+          "difficulty": "beginner",
+          "data_structure": "arrays",
+          "pattern": "iteration",
+          "input_format": "nums: List[int]",
+          "output_format": "int",
+          "constraints": "0 <= len(nums) <= 1000, -1000 <= nums[i] <= 1000",
+          "test_cases": [
+            {"input": {"nums": [1, 2, 3, 4, 5]}, "output": 15, "explanation": "1 + 2 + 3 + 4 + 5 = 15"},
+            {"input": {"nums": [-1, -2, -3]}, "output": -6, "explanation": "(-1) + (-2) + (-3) = -6"},
+            {"input": {"nums": []}, "output": 0, "explanation": "Empty array sum is 0"},
+            {"input": {"nums": [0, 0, 0]}, "output": 0, "explanation": "Sum of zeros is 0"}
+          ],
+          "solution_template": "def sum_array(nums):\n    total = 0\n    for num in nums:\n        total += num\n    return total",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(1)",
+          "tags": ["arrays", "iteration", "accumulation", "beginner"],
+          "learning_points": [
+            "Accumulator pattern",
+            "Loop through array",
+            "Handle empty arrays"
+          ]
+        }
+      ]
+    },
+    "array_searching": {
+      "description": "Search operations in arrays",
+      "difficulty": "easy",
+      "count": 10,
+      "questions": [
+        {
+          "id": "arr_101",
+          "title": "Linear Search",
+          "description": "Given an array and a target value, return the index of the target if found, -1 otherwise.",
+          "difficulty": "easy",
+          "data_structure": "arrays",
+          "pattern": "linear_search",
+          "input_format": "nums: List[int], target: int",
+          "output_format": "int",
+          "constraints": "1 <= len(nums) <= 1000, -1000 <= nums[i] <= 1000, -1000 <= target <= 1000",
+          "test_cases": [
+            {"input": {"nums": [1, 2, 3, 4, 5], "target": 3}, "output": 2, "explanation": "Target 3 is at index 2"},
+            {"input": {"nums": [1, 2, 3, 4, 5], "target": 6}, "output": -1, "explanation": "Target 6 not found"},
+            {"input": {"nums": [5], "target": 5}, "output": 0, "explanation": "Single element array, target found at index 0"},
+            {"input": {"nums": [1, 1, 1], "target": 1}, "output": 0, "explanation": "First occurrence of target at index 0"}
+          ],
+          "solution_template": "def linear_search(nums, target):\n    for i in range(len(nums)):\n        if nums[i] == target:\n            return i\n    return -1",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(1)",
+          "tags": ["arrays", "searching", "easy"],
+          "learning_points": [
+            "Linear search algorithm",
+            "Index tracking",
+            "Return -1 for not found"
+          ]
+        },
+        {
+          "id": "arr_102",
+          "title": "Binary Search",
+          "description": "Given a sorted array and a target value, return the index of the target if found, -1 otherwise.",
+          "difficulty": "easy",
+          "data_structure": "arrays",
+          "pattern": "binary_search",
+          "input_format": "nums: List[int], target: int",
+          "output_format": "int",
+          "constraints": "1 <= len(nums) <= 1000, -1000 <= nums[i] <= 1000, -1000 <= target <= 1000, nums is sorted",
+          "test_cases": [
+            {"input": {"nums": [1, 2, 3, 4, 5], "target": 3}, "output": 2, "explanation": "Target 3 is at index 2"},
+            {"input": {"nums": [1, 2, 3, 4, 5], "target": 6}, "output": -1, "explanation": "Target 6 not found"},
+            {"input": {"nums": [1, 3, 5, 7, 9], "target": 7}, "output": 3, "explanation": "Target 7 is at index 3"},
+            {"input": {"nums": [1, 3, 5, 7, 9], "target": 1}, "output": 0, "explanation": "Target 1 is at index 0"}
+          ],
+          "solution_template": "def binary_search(nums, target):\n    left, right = 0, len(nums) - 1\n    \n    while left <= right:\n        mid = (left + right) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    \n    return -1",
+          "time_complexity": "O(log n)",
+          "space_complexity": "O(1)",
+          "tags": ["arrays", "binary_search", "easy"],
+          "learning_points": [
+            "Binary search algorithm",
+            "Divide and conquer",
+            "Sorted array requirement",
+            "Logarithmic time complexity"
+          ]
+        }
+      ]
+    },
+    "two_pointers": {
+      "description": "Two pointer technique for array problems",
+      "difficulty": "easy",
+      "count": 8,
+      "questions": [
+        {
+          "id": "arr_201",
+          "title": "Two Sum (Two Pointers)",
+          "description": "Given a sorted array and a target sum, find two numbers that add up to the target using two pointers.",
+          "difficulty": "easy",
+          "data_structure": "arrays",
+          "pattern": "two_pointers",
+          "input_format": "nums: List[int], target: int",
+          "output_format": "List[int] (indices of the two numbers)",
+          "constraints": "2 <= len(nums) <= 1000, -1000 <= nums[i] <= 1000, -1000 <= target <= 1000, nums is sorted",
+          "test_cases": [
+            {"input": {"nums": [2, 7, 11, 15], "target": 9}, "output": [0, 1], "explanation": "nums[0] + nums[1] = 2 + 7 = 9"},
+            {"input": {"nums": [1, 2, 3, 4, 5], "target": 8}, "output": [2, 4], "explanation": "nums[2] + nums[4] = 3 + 5 = 8"},
+            {"input": {"nums": [1, 2, 3, 4, 5], "target": 10}, "output": [], "explanation": "No two numbers sum to 10"},
+            {"input": {"nums": [-1, 0, 1, 2], "target": 0}, "output": [0, 2], "explanation": "nums[0] + nums[2] = -1 + 1 = 0"}
+          ],
+          "solution_template": "def two_sum_two_pointers(nums, target):\n    left, right = 0, len(nums) - 1\n    \n    while left < right:\n        current_sum = nums[left] + nums[right]\n        if current_sum == target:\n            return [left, right]\n        elif current_sum < target:\n            left += 1\n        else:\n            right -= 1\n    \n    return []",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(1)",
+          "tags": ["arrays", "two_pointers", "easy"],
+          "learning_points": [
+            "Two pointer technique",
+            "Sorted array advantage",
+            "Pointer movement logic"
+          ]
+        },
+        {
+          "id": "arr_202",
+          "title": "Remove Duplicates from Sorted Array",
+          "description": "Given a sorted array, remove duplicates in-place and return the new length.",
+          "difficulty": "easy",
+          "data_structure": "arrays",
+          "pattern": "two_pointers",
+          "input_format": "nums: List[int]",
+          "output_format": "int (new length)",
+          "constraints": "0 <= len(nums) <= 1000, -1000 <= nums[i] <= 1000, nums is sorted",
+          "test_cases": [
+            {"input": {"nums": [1, 1, 2]}, "output": 2, "explanation": "Array becomes [1, 2], length is 2"},
+            {"input": {"nums": [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]}, "output": 5, "explanation": "Array becomes [0, 1, 2, 3, 4], length is 5"},
+            {"input": {"nums": [1, 2, 3, 4, 5]}, "output": 5, "explanation": "No duplicates, length remains 5"},
+            {"input": {"nums": []}, "output": 0, "explanation": "Empty array, length is 0"}
+          ],
+          "solution_template": "def remove_duplicates(nums):\n    if not nums:\n        return 0\n    \n    write_index = 1\n    for read_index in range(1, len(nums)):\n        if nums[read_index] != nums[read_index - 1]:\n            nums[write_index] = nums[read_index]\n            write_index += 1\n    \n    return write_index",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(1)",
+          "tags": ["arrays", "two_pointers", "in_place", "easy"],
+          "learning_points": [
+            "In-place array modification",
+            "Two pointer technique for duplicates",
+            "Read and write indices"
+          ]
+        }
+      ]
+    },
+    "sliding_window": {
+      "description": "Sliding window technique for array problems",
+      "difficulty": "medium",
+      "count": 10,
+      "questions": [
+        {
+          "id": "arr_301",
+          "title": "Maximum Sum Subarray of Size K",
+          "description": "Given an array and a number k, find the maximum sum of any contiguous subarray of size k.",
+          "difficulty": "medium",
+          "data_structure": "arrays",
+          "pattern": "sliding_window",
+          "input_format": "nums: List[int], k: int",
+          "output_format": "int",
+          "constraints": "1 <= len(nums) <= 1000, 1 <= k <= len(nums), -1000 <= nums[i] <= 1000",
+          "test_cases": [
+            {"input": {"nums": [1, 4, 2, 10, 23, 3, 1, 0, 20], "k": 4}, "output": 39, "explanation": "Maximum sum subarray is [4, 2, 10, 23] = 39"},
+            {"input": {"nums": [100, 200, 300, 400], "k": 2}, "output": 700, "explanation": "Maximum sum subarray is [300, 400] = 700"},
+            {"input": {"nums": [1, 2, 3, 4, 5], "k": 1}, "output": 5, "explanation": "Maximum sum subarray is [5] = 5"},
+            {"input": {"nums": [2, 3, 4, 1, 5], "k": 2}, "output": 7, "explanation": "Maximum sum subarray is [3, 4] = 7"}
+          ],
+          "solution_template": "def max_sum_subarray(nums, k):\n    if len(nums) < k:\n        return 0\n    \n    # Calculate sum of first window\n    window_sum = sum(nums[:k])\n    max_sum = window_sum\n    \n    # Slide the window\n    for i in range(k, len(nums)):\n        window_sum = window_sum - nums[i - k] + nums[i]\n        max_sum = max(max_sum, window_sum)\n    \n    return max_sum",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(1)",
+          "tags": ["arrays", "sliding_window", "medium"],
+          "learning_points": [
+            "Sliding window technique",
+            "Efficient subarray sum calculation",
+            "Window maintenance"
+          ]
+        },
+        {
+          "id": "arr_302",
+          "title": "Longest Substring Without Repeating Characters",
+          "description": "Given a string, find the length of the longest substring without repeating characters.",
+          "difficulty": "medium",
+          "data_structure": "arrays",
+          "pattern": "sliding_window",
+          "input_format": "s: str",
+          "output_format": "int",
+          "constraints": "0 <= len(s) <= 50000, s consists of English letters, digits, symbols and spaces",
+          "test_cases": [
+            {"input": {"s": "abcabcbb"}, "output": 3, "explanation": "The longest substring is 'abc' with length 3"},
+            {"input": {"s": "bbbbb"}, "output": 1, "explanation": "The longest substring is 'b' with length 1"},
+            {"input": {"s": "pwwkew"}, "output": 3, "explanation": "The longest substring is 'wke' with length 3"},
+            {"input": {"s": ""}, "output": 0, "explanation": "Empty string has length 0"}
+          ],
+          "solution_template": "def length_of_longest_substring(s):\n    char_set = set()\n    left = 0\n    max_length = 0\n    \n    for right in range(len(s)):\n        while s[right] in char_set:\n            char_set.remove(s[left])\n            left += 1\n        char_set.add(s[right])\n        max_length = max(max_length, right - left + 1)\n    \n    return max_length",
+          "time_complexity": "O(n)",
+          "space_complexity": "O(min(m, n)) where m is the size of the charset",
+          "tags": ["arrays", "sliding_window", "hash_set", "medium"],
+          "learning_points": [
+            "Sliding window with set",
+            "Character frequency tracking",
+            "Window contraction logic"
+          ]
+        }
+      ]
+    },
+    "array_sorting": {
+      "description": "Sorting algorithms and sorted array operations",
+      "difficulty": "medium",
+      "count": 10,
+      "questions": [
+        {
+          "id": "arr_401",
+          "title": "Merge Two Sorted Arrays",
+          "description": "Given two sorted arrays, merge them into one sorted array.",
+          "difficulty": "medium",
+          "data_structure": "arrays",
+          "pattern": "merge",
+          "input_format": "nums1: List[int], nums2: List[int]",
+          "output_format": "List[int]",
+          "constraints": "0 <= len(nums1) <= 1000, 0 <= len(nums2) <= 1000, -1000 <= nums1[i], nums2[i] <= 1000",
+          "test_cases": [
+            {"input": {"nums1": [1, 2, 3], "nums2": [2, 5, 6]}, "output": [1, 2, 2, 3, 5, 6], "explanation": "Merged sorted array"},
+            {"input": {"nums1": [1], "nums2": []}, "output": [1], "explanation": "One array is empty"},
+            {"input": {"nums1": [], "nums2": [1]}, "output": [1], "explanation": "One array is empty"},
+            {"input": {"nums1": [4, 5, 6], "nums2": [1, 2, 3]}, "output": [1, 2, 3, 4, 5, 6], "explanation": "All elements from nums2 come first"}
+          ],
+          "solution_template": "def merge_sorted_arrays(nums1, nums2):\n    result = []\n    i = j = 0\n    \n    while i < len(nums1) and j < len(nums2):\n        if nums1[i] <= nums2[j]:\n            result.append(nums1[i])\n            i += 1\n        else:\n            result.append(nums2[j])\n            j += 1\n    \n    # Add remaining elements\n    result.extend(nums1[i:])\n    result.extend(nums2[j:])\n    \n    return result",
+          "time_complexity": "O(m + n)",
+          "space_complexity": "O(m + n)",
+          "tags": ["arrays", "merge", "sorting", "medium"],
+          "learning_points": [
+            "Merge algorithm",
+            "Two pointer technique",
+            "Handling remaining elements"
+          ]
+        }
+      ]
+    }
+  },
+  "progression_path": {
+    "beginner": {
+      "focus": "Basic array operations and iterations",
+      "questions": ["arr_001", "arr_002"],
+      "learning_goal": "Master array indexing, iteration, and basic operations"
+    },
+    "easy": {
+      "focus": "Array searching and two pointers",
+      "questions": ["arr_101", "arr_102", "arr_201", "arr_202"],
+      "learning_goal": "Learn search algorithms and two pointer technique"
+    },
+    "medium": {
+      "focus": "Sliding window and sorting",
+      "questions": ["arr_301", "arr_302", "arr_401"],
+      "learning_goal": "Master sliding window and merge algorithms"
+    }
+  },
+  "performance_analysis": {
+    "time_complexity_guide": {
+      "O(1)": "Constant time - direct array access",
+      "O(n)": "Linear time - single pass through array",
+      "O(log n)": "Logarithmic time - binary search",
+      "O(n log n)": "Linearithmic time - sorting algorithms",
+      "O(n^2)": "Quadratic time - nested loops"
+    },
+    "space_complexity_guide": {
+      "O(1)": "Constant space - no extra data structures",
+      "O(n)": "Linear space - proportional to input size",
+      "O(log n)": "Logarithmic space - recursive calls"
+    }
+  },
+  "common_patterns": {
+    "two_pointers": {
+      "description": "Use two pointers to traverse array from different positions",
+      "use_cases": ["sorted array problems", "palindrome checking", "pair finding"],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)"
+    },
+    "sliding_window": {
+      "description": "Maintain a window of elements and slide it across the array",
+      "use_cases": ["subarray problems", "substring problems", "window-based optimization"],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(k) where k is window size"
+    },
+    "prefix_sum": {
+      "description": "Precompute sums to answer range queries efficiently",
+      "use_cases": ["range sum queries", "subarray sum problems"],
+      "time_complexity": "O(n) preprocessing, O(1) query",
+      "space_complexity": "O(n)"
+    }
+  }
+}
