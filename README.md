@@ -69,6 +69,8 @@ This repository is not merely a collection of coding tutorials; it is a **philos
 #### 📚 **The Library Archives** - *Luna Chen's Information Universe*
 - **[`leetcode-library.md`](./leetcode-stories/leetcode-library.md)** - *Knowledge as Living System*
 
+NotebookLM Leetcode for Librarians: https://notebooklm.google.com/notebook/ab7728fc-e802-42a3-9a2a-15b1b1dd693c
+
 **Philosophical Insight**: *"The library embodies the I-Ching's principle of change within constancy—where information flows like the changing lines of the hexagrams, yet the underlying structure remains eternal."*
 
 ---
@@ -137,6 +139,21 @@ This repository is not merely a collection of coding tutorials; it is a **philos
 
 ---
 
+### 🎥 **The Multimedia Dimension** - *Where Stories Come to Life*
+
+*"The best way to learn is through multiple senses—seeing, hearing, and experiencing the patterns in action."*
+
+#### 🎬 **Video Lectures & Presentations**
+- **[`leetcode-for-librarians.mp4`](./leetcode-for-librarians.mp4)** - *The Complete Library Analogy Lecture*
+- **[`leetcode-for-librarians-ii.mp4`](./leetcode-for-librarians-ii.mp4)** - *Advanced Patterns and Applications*
+
+#### 📝 **Speech Transcripts & Scripts**
+- **[`leetcode-library-speech.md`](./leetcode-library-speech.md)** - *Luna Chen's Complete Speech: "The Universal Library System"*
+
+**Philosophical Insight**: *"These multimedia resources embody the ancient tradition of oral teaching—where knowledge is passed not just through written words, but through the living voice that carries the passion and understanding of the teacher directly to the student's heart and mind."*
+
+---
+
 ### 🔧 **The Practical Dimension** - *Where Knowledge Becomes Power*
 
 *"Tools are not mere instruments but extensions of the mind, allowing us to think beyond the limitations of our biological hardware."*
@@ -145,7 +162,15 @@ This repository is not merely a collection of coding tutorials; it is a **philos
 - **[`leetcode-hints-userscript.js`](./tools-and-scripts/leetcode-hints-userscript.js)** - *The Digital Mentor*
 - **[`USERSCRIPT-INSTALLATION.md`](./tools-and-scripts/USERSCRIPT-INSTALLATION.md)** - *The Path to Empowerment*
 
-**Philosophical Insight**: *"These tools embody Leibniz's vision of the monad as a mirror of the universe—they reflect back to us the patterns we seek to understand, creating a feedback loop of learning and growth."*
+#### 🗄️ **Dynamic Question Generation System**
+- **[`question_generator.py`](./leetcode-databases/question_generator.py)** - *The Universal Question Generator*
+- **[`main-question-database.json`](./leetcode-databases/main-question-database.json)** - *Central Question Repository (150+ questions)*
+- **[`variable-manipulation-database.json`](./leetcode-databases/variable-manipulation-database.json)** - *Beginner Variable Operations (25 questions)*
+- **[`array-operations-database.json`](./leetcode-databases/array-operations-database.json)** - *Array Mastery (50 questions)*
+- **[`hashmap-operations-database.json`](./leetcode-databases/hashmap-operations-database.json)** - *Hashmap Expertise (40 questions)*
+- **[`advanced-algorithms-database.json`](./leetcode-databases/advanced-algorithms-database.json)** - *Complex Algorithms (60 questions)*
+
+**Philosophical Insight**: *"These tools embody Leibniz's vision of the monad as a mirror of the universe—they reflect back to us the patterns we seek to understand, creating a feedback loop of learning and growth. The question generator system represents the ultimate expression of this principle, creating infinite variations of the same fundamental patterns."*
 
 ---
 
@@ -355,6 +380,15 @@ The same coordination patterns that govern hospital patient flow also govern fac
 
 ### 🔧 **Tools** (`./tools-and-scripts/`)
 - [Hints Userscript](./tools-and-scripts/leetcode-hints-userscript.js) | [Installation Guide](./tools-and-scripts/USERSCRIPT-INSTALLATION.md)
+
+### 🎥 **Multimedia** (Root Directory)
+- [Library Lecture I](./leetcode-for-librarians.mp4) | [Library Lecture II](./leetcode-for-librarians-ii.mp4)
+- [Speech Transcript](./leetcode-library-speech.md)
+
+### 🗄️ **Question Databases** (`./leetcode-databases/`)
+- [Question Generator](./leetcode-databases/question_generator.py) | [Main Database](./leetcode-databases/main-question-database.json)
+- [Variable Database](./leetcode-databases/variable-manipulation-database.json) | [Array Database](./leetcode-databases/array-operations-database.json)
+- [Hashmap Database](./leetcode-databases/hashmap-operations-database.json) | [Advanced Database](./leetcode-databases/advanced-algorithms-database.json)
 
 ---
 
